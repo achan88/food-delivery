@@ -1,6 +1,5 @@
-import { createContext } from "react";
+import { createContext, useState, useEffect } from "react";
 import { food_list } from "../assets/assets";
-import { useState } from "react";
 
 export const StoreContext = createContext(null);
 
@@ -33,6 +32,12 @@ const StoreContextProvider = (props) => {
       };
     });
   };
+
+  useEffect(() => {
+
+    console.log(cartItems);
+
+  }, [cartItems])
   const contextValue = {
     food_list,
     cartItems,
