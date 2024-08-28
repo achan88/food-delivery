@@ -33,6 +33,20 @@ const StoreContextProvider = (props) => {
     });
   };
 
+  function getTotal() {
+
+    let itemsTotal = 0;
+    for (let i = 0; i < food_list.length; i++) {
+      
+      if (cartItems[food_list[i]._id] > 0) {
+        itemsTotal += cartItems[food_list[i]._id] * food_list[i].price;
+      }
+    }
+
+    return itemsTotal;
+
+  }
+
   useEffect(() => {
 
     console.log(cartItems);
@@ -43,7 +57,8 @@ const StoreContextProvider = (props) => {
     cartItems,
     setCartItems,
     addToCart,
-    removeFromCart
+    removeFromCart,
+    getTotal
   };
 
   return (
