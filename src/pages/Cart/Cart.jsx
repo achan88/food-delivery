@@ -1,9 +1,11 @@
 import { useContext } from "react";
 import "./Cart.css";
 import { StoreContext } from "../../context/StoreContext";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { cartItems, food_list, removeFromCart, getTotal } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart, getTotal } =
+    useContext(StoreContext);
   return (
     <div className="cart">
       <div className="cart-items">
@@ -56,13 +58,15 @@ const Cart = () => {
               <b>${getTotal() + 2}</b>
             </div>
           </div>
-          <button>PROCEED TO CHECKOUT</button>
+          <Link to="/order">
+            <button>PROCEED TO CHECKOUT</button>
+          </Link>
         </div>
         <div className="cart-promo-code">
           <div>
             <p>If you have a promo code, Enter: ...</p>
             <div className="cart-promo-code-input">
-              <input type="text" placeholder="promo code"/>
+              <input type="text" placeholder="promo code" />
               <button>Submit</button>
             </div>
           </div>
