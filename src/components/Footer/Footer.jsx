@@ -41,7 +41,7 @@ const Footer = () => {
       </div>
       <hr />
       <p className="footer-copyright">
-        Copyright 2024 © ... - ALL RIGHTS RESERVED
+        Copyright 2024 © FreshRoute - ALL RIGHTS RESERVED
       </p>
     </div>
   );
