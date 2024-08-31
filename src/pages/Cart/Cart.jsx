@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 const Cart = () => {
   const { cartItems, food_list, removeFromCart, getTotal } =
     useContext(StoreContext);
+
+  const cartTotal = getTotal();
+
   return (
     <div className="cart">
       <div className="cart-items">
@@ -50,12 +53,12 @@ const Cart = () => {
             <hr />
             <div className="cart-total-details">
               <p>Delivery Fee</p>
-              <p>${2}</p>
+              <p>${cartTotal > 0 ? 2 : 0}</p>
             </div>
             <hr />
             <div className="cart-total-details">
               <b>Total</b>
-              <b>${getTotal() + 2}</b>
+              <b>${cartTotal > 0 ? cartTotal + 2 : cartTotal}</b>
             </div>
           </div>
           <Link to="/order">
