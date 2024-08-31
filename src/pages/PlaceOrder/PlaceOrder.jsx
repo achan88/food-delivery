@@ -7,8 +7,11 @@ const PlaceOrder = () => {
 
   const cartTotal = getTotal();
 
+  function handleSubmit(event) {
+    event.preventDefault();
+  }
   return (
-    <form className="place-order">
+    <form className="place-order" onSubmit={handleSubmit}>
       <div className="place-order-left">
         <p className="title">Delivery Information</p>
         <div className="multi-fields">
@@ -46,7 +49,7 @@ const PlaceOrder = () => {
               <b>${cartTotal > 0 ? cartTotal + 2 : cartTotal}</b>
             </div>
           </div>
-          <button type="button">PROCEED TO PAYMENT</button>
+          <button type="submit">PROCEED TO PAYMENT</button>
         </div>
       </div>
     </form>
